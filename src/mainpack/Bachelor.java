@@ -5,10 +5,19 @@ public class Bachelor extends Student {
     
     // вводим понятие курса
     private int Course;
+   
+    // вводим понятие минимального и максимального курсов
+    public final int MinCourse = 1;
+    public final int MaxCourse = 4;
     
     // метод для задания курса
     public void setCourse(int aCourse)
     {
+        if (aCourse > this.MaxCourse)
+            aCourse = this.MaxCourse;
+        if (aCourse < this.MinCourse)
+            aCourse = this.MinCourse;
+        // непосредственное присваивание
         this.Course = aCourse;
     }
     
@@ -39,6 +48,8 @@ public class Bachelor extends Student {
     // метод получения общей информации
     public String getInformation()
     {
-        return this.Name;
+        return this.Name + " студент-бакалавр в " + super.getInstitut() 
+             + " на факультете " + super.getFaculty() + " на " 
+                 + this.getCourse() + " курсе.";
     }
 }

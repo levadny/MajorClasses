@@ -8,7 +8,8 @@ public class MajorClasses {
         System.out.println("Программа MajorClasses");
         System.out.println("Программа предназначена для изучения ООП и Java");
         //Person person = new Student();
-        Person person_temp = new Bachelor();
+        Person person_temp = new Bachelor("Василий Петров", "MIT", 
+                "Computer science", 2);
         System.out.println("Info about " + person_temp.getClass() + " => " + 
           person_temp.getInformation());
     }
